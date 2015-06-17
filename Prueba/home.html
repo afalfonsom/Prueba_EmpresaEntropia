@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Enconding para soportar caracteres especiales -->
+    <meta charset="UTF-8">
+    <title>Prueba Devox</title>
+    <!-- JQUERY -->
+    <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+    <!-- Bootstrap: Javascripts -->
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <!-- Bootstrap: CSS -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <!-- Documentación de bootstrap: http://getbootstrap.com/getting-started/  -->
+
+    <!-- Estilos de home.html -->
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+
+    <!-- Javascript de home.html -->
+    <script type="text/javascript" src="js/home.js"></script>
+
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="header clearfix">
+           <nav>
+            <ul class="nav nav-pills pull-right">
+              <li role="presentation" class="active"><a href="#">Inicio</a></li>
+              <!-- se hace referencia desde el link acerca del IMC a la seccion del h4 que tiene como id="calIMC" la cual corresponde a la seccion de la pagina donde se encuentra el calculo de el IMC en linea-->
+              <li role="presentation"><a href="#calIMC">Acerca del IMC</a></li>
+              <!-- link que abre una ventan modal la cual tiene como nombre MiVentanaModal-->
+              <li role="presentation"><a data-toggle="modal" href="#MiVentanaModal" class=" btn btn-link" >Contacto</a></li>
+          </ul>
+      </nav>
+      <h3 class="text-muted">Calcule su peso ideal</h3>
+  </div>
+
+  <div class="jumbotron">
+   <h1>Calculadora de peso</h1>
+   <p class="lead">
+      Calcule su índice de masa corporal y verifique su estado de salud en línea!
+  </p>
+  <p><a class="btn btn-lg btn-success" href="#" role="button" onclick="open_request_data_modal();">¡Comenzar ahora!</a></p>
+</div>
+
+<div class="row marketing">
+   <div class="col-lg-6">
+    <h4 id="calIMC">Calcule su IMC en línea</h4>
+    <p>
+       El índice de masa corporal (IMC) es una medida de asociación entre la masa y la talla de un individuo ideada por el estadístico belga Adolphe Quetelet, por lo que también se conoce como índice de Quetelet. 
+   </p>
+
+   <h4>Como se calcula el indice de masa muscular ?</h4>
+   <p>El indice de masa muscular se puede calcular con una sencilla formula la cual mostraremos a continuación: <br><br><img src="img/formulaIMC.png"><br> </p>
+
+
+   <h4>Información</h4>
+   <p>Una buena forma de determinar si su peso es saludable para su estatura es calcular su índice de masa corporal (IMC). Su proveedor de atención médica y usted pueden usar su IMC para calcular la cantidad de grasa corporal que usted tiene. <br>
+
+    Ser obeso sobrecarga al corazón y puede llevar a que se presenten graves problemas de salud. Estos incluyen: <br><br>
+
+    Cardiopatía <br>
+    Hipertensión arterial <br>
+    Apnea del sueño <br>
+    Diabetes tipo 2 <br>
+    Venas varicosas</p>
+</div>
+
+<div class="col-lg-6">
+  <h4>Estadísticas mundiales</h4>
+  <p>
+   Investigadores de la Escuela de Londres de Higiene y Medicina Tropical analizaron la media del IMC de 177 países usando los datos de la ONU sobre la población. La Organización Mundial de la Salud estima el peso en el mundo y altura a través de los exámenes de salud nacionales.
+</p>
+
+
+<h4>¿Cómo se usa el IMC?</h4>
+<p>El IMC se usa como una herramienta de detección para identificar posibles problemas de salud de los adultos. Sin embargo, el IMC no es una herramienta de diagnóstico. Por ejemplo, una persona puede tener un alto IMC, pero para determinar si el exceso de peso es un riesgo para la salud, un proveedor de atención médica necesitará realizar evaluaciones adicionales. Estas evaluaciones pueden incluir la medición del grosor de los pliegues cutáneos, evaluaciones de la alimentación, la actividad física, los antecedentes familiares y otras pruebas de salud que sean adecuadas.</p>
+
+<h4>¿Qué otras maneras hay para medir la obesidad? ¿Por qué los CDC no las usan para determinar el sobrepeso y la obesidad entre el público en general?</h4>
+<p>Otros métodos para medir la grasa corporal incluyen la medición del grosor de los pliegues cutáneos (con calibres), pesaje bajo el agua, impedancia bioeléctrica, la absorciometría dual de rayos X (DXA) y la dilución de isótopos. Sin embargo, estos métodos no siempre están disponibles y o son costosos o requieren personal altamente capacitado para realizarlos. Además, muchos de estos métodos pueden ser difíciles de estandarizar entre los observadores o las máquinas, lo cual complica las comparaciones de los estudios y periodos de tiempo.</p>
+</div>
+</div>
+
+<footer class="footer">
+   <p>&copy; Devox 2015</p>
+</footer>
+</div><!-- /container -->
+</body>
+
+<div class="modal fade" id="modal_datos" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<form action="home.html">
+        <div class="modal-dialog">
+          <div class="modal-content">
+           <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+             <h4 class="modal-title" id="myModalLabel">Consultar mi IMC</h4>
+         </div>
+         <div class="modal-body">
+             <p>Ingrese los datos solicitados:</p>
+             <table class="table table-hover">
+                <tr>
+                   <td><b>Peso en kilogramos:</b></td>
+                   <td><input type="number" min="1" class="form-control" name="person[weight]" id="person_weight" value="0" required></td>
+               </tr>
+               <tr>
+                   <td><b>Altura en centímetros</b></td>
+                   <td><input type="number" min="1" class="form-control" name="person[height]" id="person_height" value="0" required></td>
+               </tr>
+           </table>
+       </div>
+       <div class="modal-footer">
+           <form>
+             <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+             <button class="btn bt<form>imary" type="button" onclick="enviarParametros()">¡Consultar ahora!</button>
+         </form>
+     </div>
+ </div></form>
+</div>
+</form>
+</div>
+
+<!--Ventana Modal De nombre MiVentanaModal que es abierta despues de dar click en el link de contacto esta ventana modal-->
+<div class="modal fade" id="MiVentanaModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <form action="home.html">
+        <div class="modal-dialog">
+          <div class="modal-content">
+           <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+             <h4 class="modal-title" id="myModalLabel">Formulario de Contacto</h4>
+         </div>
+         <div class="modal-body">
+             <table class="table table-hover">
+                <tr>
+                   <td><b>Nombre: </b></td>
+                   <td><input type="text" class="form-control"  id="Nombre_contacto" placeholder="Ingrese su nombre" autofocus required></td>
+               </tr>
+               <tr>
+                   <td><b>Email: </b></td>
+                   <td><input type="email" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" class="form-control"  id="Nombre_contacto"  placeholder="Ingrese su correo electrónico" equired></td>
+               </tr>
+               <tr>
+                <td><b>Comentario</b></td>
+                <td><textarea name="Comentario" id="Comentario_contacto"class="form-control" rows="3" required></textarea>
+                </td>    
+            </tr>
+        </table>
+    </div>
+    <div class="modal-footer">
+     <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Enviar</button>
+ </div>
+</div>
+</div>
+</form>
+</div>
+
+</html>

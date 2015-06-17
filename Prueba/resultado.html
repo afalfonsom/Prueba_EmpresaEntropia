@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Enconding para soportar caracteres especiales -->
+    <meta charset="UTF-8">
+    <title>Prueba Devox</title>
+    <!-- JQUERY -->
+    <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+    <!-- Bootstrap: Javascripts -->
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <!-- Bootstrap: CSS -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <!-- Documentación de bootstrap: http://getbootstrap.com/getting-started/  -->
+
+    <!-- Estilos de home.html -->
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+    <!-- Estilo de letra para usar en el parrafo donde se mostrara el resultado del IMC-->
+    <link href='http://fonts.googleapis.com/css?family=Cabin:500italic' rel='stylesheet' type='text/css'>
+
+    <!-- Javascript de home.html -->
+    <script type="text/javascript" src="js/home.js"></script>
+
+
+
+</head>
+<!-- se le agrega el atributo onload a la pagina para que invoque el metodo de javascript que me va a calcular el IMC antes de cargar la pagina -->
+<body onload="obtenerValoresUrl()">
+    <div class="container">
+        <div class="header clearfix">
+           <nav>
+            <ul class="nav nav-pills pull-right">
+              <li role="presentation" class="active"><a href="#">Inicio</a></li>
+              <!-- se hace referencia desde el link acerca del IMC a la seccion del h4 que tiene como id="calIMC" la cual corresponde a la seccion de la pagina donde se encuentra el calculo de el IMC en linea-->
+              <li role="presentation"><a href="#calIMC">Acerca del IMC</a></li>
+              <!-- link que abre una ventan modal la cual tiene como nombre MiVentanaModal-->
+              <li role="presentation"><a data-toggle="modal" href="#MiVentanaModal" class=" btn btn-link" >Contacto</a></li>
+          </ul>
+      </nav>
+      <h3 class="text-muted">Calcule su peso ideal</h3>
+  </div>
+<!-- Este es el div el cual sera seteado por la funcion javascript la cual hace el calculo del IMC aqui es donde se mostrara los resultados del calculo-->
+  <div class="jumbotron" id="mostrar">
+        
+</div>
+<!-- este div servira para agregar el boton que me llevara devuelta a la pagina home.html para volver a calcular el IMC-->
+
+<div class="row">
+  <div class="col-xs-6 col-sm-4"></div>
+  <div class="col-xs-6 col-sm-4"><p><a class="btn btn-lg btn-success" href="home.html" role="button" >Volver a Calcular su IMC</a></p></div>
+  <!-- Optional: clear the XS cols if their content doesn't match in height -->
+  <div class="clearfix visible-xs-block"></div>
+  <div class="col-xs-6 col-sm-4"></div>
+</div>
+
+<footer class="footer">
+   <p>&copy; Devox 2015</p>
+</footer>
+</div><!-- /container -->
+</body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+<head>
+ <meta charset="UTF-8">
+ <title>Prueba Devox</title>
+ <!-- JQUERY -->
+ <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+ <!-- Bootstrap: Javascripts -->
+ <script type="text/javascript" src="js/bootstrap.js"></script>
+ <!-- Bootstrap: CSS -->
+ <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+ <!-- Documentación de bootstrap: http://getbootstrap.com/getting-started/  -->
+
+ <!-- Estilos de index.html -->
+ <link rel="stylesheet" type="text/css" href="css/index.css">
+
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="card card-container">
+            <img id="profile-img" class="profile-img-card" src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+            <p id="profile-name" class="profile-name-card"></p>
+            <!-- se le agrego en en el atributo action el nombre de home.html para que al dar click en el boton ingresar me rediriga hacia esa pagina-->
+            <form class="form-signin" action="home.html">
+                <span id="reauth-email" class="reauth-email"></span>
+                <!-- Validacion del campo email de obligatoriedad y formato  con el atributo email y required, ademas de esto se le hizo el cambio del texto por omision-->
+                <input type="email" id="inputEmail" class="form-control" placeholder="Ingrese su correo electrónico" autofocus required>
+                <!-- Validacion del campo password con obligatoriedad y visualizacion del campo en puntos con el atributo password y required, ademas de esto se le hizo el cambio del texto por omision-->
+                <input type="password" id="inputPassword" class="form-control" placeholder="Ingrese su contraseña" required >
+                <div class="checkbox">
+                    <!-- Permitir checkear el checkbox desde el texto recordarme-->
+                    <input type="checkbox" value="remember-me" name="Recordarme?" id="Recordarme"> 
+                    <label for="Recordarme">Recordarme?</label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Ingresar</button>
+            </form><!-- /form -->
+            
+        </div><!-- /card-container -->
+    </div><!-- /container -->
+</body>
+</html>
